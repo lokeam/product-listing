@@ -24,7 +24,7 @@ class Card extends PureComponent {
         <div className="card__text">
           <div className="card__heading">{product}</div>
           <div className="card__msrp">MSRP: <span className="card__msrp-dec">{msrpPlusDecimal}</span></div>
-          <div className="card__pricelabel">Price: <span className="card__msrp-dec">{pricePlusDecimal}</span></div>
+          <div className="card__pricelabel">Price: <span className="card__price-dec">{pricePlusDecimal}</span></div>
         </div>
       </div>
     );

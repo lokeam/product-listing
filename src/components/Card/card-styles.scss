@@ -4,10 +4,14 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  height: 22.5rem;
+  background: #fff;
   margin: 1rem 0.5rem 0 0.5rem;
+  //min-width: 10rem;
+  // max-width: 18rem;
+
+  //width: 40%;
+  height: 22.5rem;
   padding: 0 0 1rem 0;
-  background-color: #fff;
   cursor: pointer;
   color: $brand-dark;
   overflow: hidden;
@@ -17,16 +21,112 @@
 
   &:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 16px 0 $dark-alpha
+    box-shadow: 0 6px 16px 0 rgba(0,0,0,0.1);
+  }
+
+  &__status--soldout {
+    background-color: $dark-gray-alpha;
+    opacity: 0.5;
+
+    &:hover {
+      cursor: default;
+      transform: unset;
+      box-shadow: unset;
+    }
+  
+    .card__thumbnail {
+      background-color: $gray-alpha;
+    }
   }
 
   &__thumbnail {
-    // debug
-    border: 5px solid green;
+    position: relative;
+    flex: 0 0 auto;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    max-height: 200px;
+    overflow: hidden;
+    z-index: 10;
+    background-color: #f2f2f2;
+  }
+
+  &__svg-placeholder {
+    height: auto;
+    width: 65%;
+  }
+
+  &__img-placeholder {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #ccc;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
   }
 
   &__text {
-    // debug
-    border: 5px solid blue;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    padding: 0.8rem;
+  }
+
+  &__heading {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    margin-top: 0.25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    letter-spacing: 0.25px;
+    height: 80px;
+  
+  }
+
+  &__msrp,
+  &__pricelabel {
+    font-size: 0.8rem;
+    line-height: 1.25rem;
+  }
+
+  &__price-dec {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    font-weight: 800;
+    color: $brand-green;
+  }
+  
+  &__msrp-dec {
+    text-decoration: line-through;
+  }
+
+  &__logo--soldout {
+    z-index: 100;
+    position: absolute;
+    top: 20px;
+    left: 8px;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: $green-2;
+    color: #fff;
+    font-weight: 800;
+    margin-bottom: 5px;
   }
 }
