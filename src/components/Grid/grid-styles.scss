@@ -1,0 +1,11 @@
+@import '../../scss/styles.scss';
+
+.grid {
+  position: relative;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat( auto-fill, minmax( 180px, 1fr ));
+  justify-content: flex-start;
+  padding: 30px;
+  background-color: #fff;
+}
