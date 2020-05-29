@@ -1,11 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
+import Nav from './components/Nav/Nav';
+
 import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <nav className="nav">I'm the nav. Woot.</nav>
+      <Nav />
       <div className="masthead">
         <h1 className="masthead__heading">I'm the Masthead.</h1>
       </div>
