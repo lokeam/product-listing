@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from './components/Nav/Nav';
+import Masthead from './components/Masthead/Masthead';
 
 import './App.scss';
 
@@ -7,9 +8,7 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <div className="masthead">
-        <h1 className="masthead__heading">I'm the Masthead.</h1>
-      </div>
+      <Masthead />
       <div className="grid">
         <p>I'm the grid.</p>
         <div className="card">
