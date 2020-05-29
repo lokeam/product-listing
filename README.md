@@ -1,7 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Please ensure that your local environment is running node version > 8.15.
 
+## Available Scripts
 In the project directory, you can run:
 
 ### `yarn start`
