@@ -8,6 +8,7 @@ Base
 @import './includes/variables';
 
 /*
-Mixins
+Mixins + Dependencies
 -------------------------
 */
+@import './includes/notify-specific';
