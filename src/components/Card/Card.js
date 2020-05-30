@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import toaster from "toasted-notes";
 import "toasted-notes/src/styles.css";
+import RESTService from '../../services/RESTservice';
 
 import produceIcon from '../../static/imgs/produce.svg';
 import './card-styles.scss';
@@ -16,9 +17,13 @@ class Card extends PureComponent {
     this._onCardClick = null;
   }
   
-  _onCardClick() {
+  _onCardClick(item) {
     console.log('card clicked');
     toaster.notify('Product selected!', { duration: 3000 });
+    
+    const testREST = new RESTService()
+    const requestOptionsTest = testREST._buildRequestOptions(item, 'POST');
+    console.log('tsting REST Service, requestOptionsTest: ', requestOptionsTest);
   }
 
   render() {
@@ -30,10 +35,10 @@ class Card extends PureComponent {
     const pricePlusDecimal = price.toFixed(2);
     const msrpPlusDecimal = msrp.toFixed(2);
 
-    console.log("Card, testing item: ", item);
+    //console.log("Card, testing item: ", item);
     return(
             <div className={`card ${productStatus}`}
-                onClick={ this._onCardClick }>
+                onClick={ () => this._onCardClick(item) }>
               <div className="card__product-msg">
                 { soldOut && ( <div className="card__logo--soldout">sold out</div> ) }
               </div>
