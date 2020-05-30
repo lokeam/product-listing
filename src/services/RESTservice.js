@@ -1,6 +1,5 @@
 import 'isomorphic-fetch';
 import es6Promise from 'es6-promise';
-import { isObject } from '../utils/helpers';
 import { TEST_HEADER, TEST_HEADER_VALUE } from '../constants';
 
 es6Promise.polyfill();
@@ -24,17 +23,12 @@ class RESTService {
 
   _makeRequest(resource = '', data = null, method = 'GET', options) {
     const requestOptions = this._buildRequestOptions(data, method);
-    console.log('_makeRequest, requestOptions: ', requestOptions);
-    
     const request = this._createRequestObj(resource, requestOptions);
-    console.log('_makeRequest, request: ', request);
 
     return fetch(request)
     .then((response) => {
       this._rawResponse = response;
-      console.log('promise, this._rawResponse ', this._rawResponse);
       const json = response.json();
-      console.log('promise, json from response ', json);
       
       if (!response.ok) {
         console.log('I am error, promise not ok');

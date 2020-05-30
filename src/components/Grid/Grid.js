@@ -1,24 +1,23 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
+import useFetch from '../../hooks/useFetch';
 import Card from '../Card/Card';
-
-/* debug */
-import sample from '../../static/responses/grid-sample.json';
 
 import './grid-styles.scss';
 
-class Grid extends PureComponent {
+function Grid () {
+  const { data, isLoading, isError } = useFetch();
 
-  render() {
-    console.log('testing sample: ', sample);
+    //console.log('testing sample: ', sample);
 
     return(
       <div className="grid">
-        { sample.data.items.map( (item) => (
-          <Card key={`gridCard--${item.product}`} item={item} />
-        ) ) }
+        {isLoading ? <div>loading...</div> : 
+          data.map( (item) => (
+            <Card key={`gridCard--${item.product}`} item={item} {...item} />
+          ))
+        }
       </div>
     );
-  }
 }
 
 export default Grid;
