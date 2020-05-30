@@ -25,3 +25,22 @@ Typography
 ------------------------- */
 $font-size-h1: 40px;
 $font-height-h1: 53px;
+
+/*
+Media Query Breakpoints
+------------------------- */
+$screen-xxs: 319px;
+$screen-xs: 445px;
+$screen-sm: 600px;
+$screen-md: 838px;
+$screen-lg: 960px;
+$screen-xl: 1240px;
+
+$screen-map: (
+  xxs: $screen-xxs,
+  xs: $screen-xs,
+  sm: $screen-sm,
+  md: $screen-md,
+  lg: $screen-lg,
+  xl: $screen-xl,
+);

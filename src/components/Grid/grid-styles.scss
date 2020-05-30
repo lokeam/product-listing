@@ -6,6 +6,12 @@
   grid-gap: 10px;
   grid-template-columns: repeat( auto-fill, minmax( 180px, 1fr ));
   justify-content: flex-start;
-  padding: 30px;
+  padding: 80px;
   background-color: #fff;
+}
+
+@include breakpoint(xs) {
+  .grid {
+    padding: 30px;
+  }
 }

@@ -1,0 +1,23 @@
+@import './variables.scss';
+
+@mixin breakpoint($size: '', $pixel-ratio: 1) {
+
+  @if $size != '' and $pixel-ratio > 1 {
+    @media (min-width: map-get($screen-map, $size)) and (-webkit-min-device-pixel-ratio: #{$pixel-ratio}),
+     (min-width: map-get($screen-map, $size)) and (min-device-pixel-ratio: #{$pixel-ratio}) {
+      @content;
+    }
+
+  } @else if $size == '' and $pixel-ratio > 1 {
+    @media (-webkit-min-device-pixel-ratio: #{$pixel-ratio}), (min-device-pixel-ratio: #{$pixel-ratio}) {
+      @content;
+    }
+  } @else if($size != '') {
+    @media (min-width: map-get($screen-map, $size)) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+
+}
