@@ -17,19 +17,25 @@ class Card extends PureComponent {
   }
   
   _onCardClick(item) {
-    async function postSelectedItem() {
-      const RESTClient = new RESTService();
-      const POST_ENDPOINT = `${TEST_ENDPOINT}/${item.id}`;
-      try {
-        const response = await RESTClient.post(POST_ENDPOINT, item);
-        console.log('POST response success: ', response)
-        toaster.notify('Thanks! We added your selection to your box!', { duration: 3000 });
-      } catch(err) {
-        console.log('Error: ', err);
-        toaster.notify('Sorry, there was a problem and we couldn\'t add your selection. Please try again later.', { duration: 3000 });
+
+    if (!item.soldOut) {
+      async function postSelectedItem() {
+        const RESTClient = new RESTService();
+        const POST_ENDPOINT = `${TEST_ENDPOINT}/${item.id}`;
+        try {
+          const response = await RESTClient.post(POST_ENDPOINT, item);
+          console.log('POST response success: ', response)
+          toaster.notify('Thanks! We added your selection to your box!', { duration: 3000 });
+        } catch(err) {
+          console.log('Error: ', err);
+          toaster.notify('Sorry, there was a problem and we couldn\'t add your selection. Please try again later.', { duration: 3000 });
+        }
       }
+      postSelectedItem();
+    } else {
+      toaster.notify('Sorry, that item is sold out! Please select another.', { duration: 3000 });
     }
-    postSelectedItem();
+
   }
 
   render() {
