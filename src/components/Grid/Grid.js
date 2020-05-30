@@ -10,10 +10,11 @@ class Grid extends PureComponent {
 
   render() {
     console.log('testing sample: ', sample);
+
     return(
       <div className="grid">
         { sample.data.items.map( (item) => (
-          <Card key={`gridCard--${item.product}`} item={item} {...item}/>
+          <Card key={`gridCard--${item.product}`} item={item} />
         ) ) }
       </div>
     );

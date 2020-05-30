@@ -8,9 +8,9 @@ import './App.scss';
 function App() {
   return (
     <div className="App">
-      <Nav />
-      <Masthead />
-      <Grid />
+        <Nav />
+        <Masthead />
+        <Grid />
     </div>
   );
 }
