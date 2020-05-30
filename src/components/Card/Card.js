@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import toaster from "toasted-notes";
 import RESTService from '../../services/RESTservice';
-import {TEST_ENDPOINT} from '../../constants';
+import { TEST_ENDPOINT } from '../../constants';
 
 import produceIcon from '../../static/imgs/produce.svg';
 import './card-styles.scss';
@@ -17,8 +17,6 @@ class Card extends PureComponent {
   }
   
   _onCardClick(item) {
-    console.log('card clicked');
-
     async function postSelectedItem() {
       const RESTClient = new RESTService();
       const POST_ENDPOINT = `${TEST_ENDPOINT}/${item.id}`;

@@ -8,8 +8,6 @@ import './grid-styles.scss';
 function Grid () {
   const { data, isLoading, isError } = useFetch();
 
-    //console.log('testing sample: ', sample);
-
     return(
       <div className="grid">
         { isError && <div>Something went wrong. Sorry about that. Please try again in a few minutes.</div> }
