@@ -86,7 +86,6 @@ class RESTService {
   }
 
   get(resource = '', data = {}) {
-    console.log('get');
     /* could optionally create query string parameters here */
     return this._makeRequest(resource, null, 'GET');
   }
